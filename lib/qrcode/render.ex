@@ -14,7 +14,6 @@ defmodule QRCode.Render do
       |> Enum.map(&do_render/1)
     end)
     |> Enum.intersperse("\n")
-    |> IO.puts()
   end
 
   defp do_render(1),         do: "\e[40m  \e[0m"
@@ -35,7 +34,6 @@ defmodule QRCode.Render do
       Enum.map(e, &do_render/1)
     end)
     |> Enum.intersperse("\n")
-    |> IO.puts()
   end
 
   defp transform(matrix) do
