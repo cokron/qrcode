@@ -16,11 +16,11 @@ defmodule QRCode.Render do
     |> Enum.intersperse("\n")
   end
 
-  defp do_render(1),         do: "\e[40m  \e[0m"
-  defp do_render(0),         do: "\e[0;107m  \e[0m"
-  defp do_render(nil),       do: "\e[0;106m  \e[0m"
-  defp do_render(:data),     do: "\e[0;102m  \e[0m"
-  defp do_render(:reserved), do: "\e[0;104m  \e[0m"
+  defp do_render(1),         do: "\e[48;5;0m  \e[0m"  # Black
+  defp do_render(0),         do: "\e[48;5;7m  \e[0m"  # White
+  defp do_render(nil),       do: "\e[48;5;6m  \e[0m"
+  defp do_render(:data),     do: "\e[48;5;2m  \e[0m"
+  defp do_render(:reserved), do: "\e[48;5;4m  \e[0m"
 
   @doc """
   Rotate the QR Code 90 degree clockwise and render to terminal.
